@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Convert character code getters into plain integers",
   "main": "dist/index.js",
+  "license": "MIT",
   "scripts": {
+    "contributorAdd": "all-contributors add",
+    "contributorGenerate": "all-contributors generate",
     "pretest": "eslint src",
     "prepublish": "del-cli dist && BABEL_ENV=publish babel src --out-dir dist --ignore /__tests__/",
     "report": "nyc report --reporter=html",
@@ -28,6 +31,7 @@
     "url": "http://beneb.info"
   },
   "devDependencies": {
+    "all-contributors-cli": "^3.0.5",
     "ava": "^0.15.0",
     "babel-cli": "^6.5.1",
     "babel-core": "^6.5.2",
