@@ -12,7 +12,7 @@ export default function ({types: t}) {
                 path.parentPath.replaceWith(
                     t.numericLiteral(path.node.object.value.charCodeAt(0))
                 );
-            }
-        }
+            },
+        },
     };
 }

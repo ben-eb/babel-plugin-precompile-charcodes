@@ -10,7 +10,8 @@
     "pretest": "eslint src",
     "prepublish": "del-cli dist && BABEL_ENV=publish babel src --out-dir dist --ignore /__tests__/",
     "report": "nyc report --reporter=html",
-    "test": "nyc ava src/__tests__"
+    "test": "nyc ava src/__tests__",
+    "test-012": "nyc ava src/__tests__"
   },
   "files": [
     "LICENSE-MIT",
@@ -42,8 +43,10 @@
     "babel-register": "^6.5.2",
     "coveralls": "^2.11.6",
     "del-cli": "^0.2.0",
-    "eslint": "^2.0.0",
-    "eslint-config-cssnano": "^2.0.0",
+    "eslint": "^3.0.0",
+    "eslint-config-cssnano": "^3.0.0",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-import": "^1.10.2",
     "nyc": "^6.0.0"
   },
   "ava": {
