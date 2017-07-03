@@ -45,7 +45,7 @@ test(
 test(
     'pass through template literals containing vars',
     passthrough,
-    'const at = `${ someVar }`.charCodeAt(0);'
+    'const at = `${someVar}`.charCodeAt(0);'
 );
 
 test(
