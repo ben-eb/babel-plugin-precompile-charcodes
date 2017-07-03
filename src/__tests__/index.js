@@ -6,6 +6,10 @@ function isEqual (t, fixture, expected) {
     t.deepEqual(transform(fixture, {plugins: [plugin]}).code, expected);
 }
 
+function passthrough (t, fixture) {
+    return isEqual(t, fixture, fixture);
+}
+
 test(
     'object property',
     isEqual,
@@ -21,6 +25,13 @@ test(
 );
 
 test(
+    'template literal',
+    isEqual,
+    'const at = `@`.charCodeAt(0);',
+    'const at = 64;'
+);
+
+test(
     'multiple variable declarations',
     isEqual,
     [
@@ -32,8 +43,19 @@ test(
 );
 
 test(
+    'pass through template literals containing vars',
+    passthrough,
+    'const at = `${ someVar }`.charCodeAt(0);'
+);
+
+test(
+    'pass through other identifiers',
+    passthrough,
+    'const add = plus.charCodeAt(0);'
+);
+
+test(
     'pass through other member expressions',
-    isEqual,
-    'const at = "@".slice(0);',
+    passthrough,
     'const at = "@".slice(0);'
 );
