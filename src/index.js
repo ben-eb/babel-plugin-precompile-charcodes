@@ -26,7 +26,7 @@ export default function ({types: t}) {
     return {
         visitor: {
             MemberExpression (path) {
-                return replaceNode(t, path);
+                replaceNode(t, path);
             },
         },
     };

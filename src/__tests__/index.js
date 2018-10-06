@@ -1,5 +1,5 @@
 import test from 'ava';
-import {transform} from 'babel-core';
+import {transform} from '@babel/core';
 import plugin from '..';
 
 function isEqual (t, fixture, expected) {
@@ -13,8 +13,8 @@ function passthrough (t, fixture) {
 test(
     'object property',
     isEqual,
-    'const code = {at: "@".charCodeAt(0)};',
-    'const code = { at: 64 };'
+    'const code = { at: "@".charCodeAt(0) };',
+    'const code = {\n  at: 64\n};'
 );
 
 test(
