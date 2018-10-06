@@ -51,5 +51,8 @@
     "parserOptions": {
       "sourceType": "module"
     }
+  },
+  "engines": {
+    "node": ">=6"
   }
 }
